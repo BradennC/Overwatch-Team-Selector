@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:3001/api/heroes';
-const teamURL = 'http://localhost:3001/api/team'
+const baseURL = 'https://stark-wave-31121.herokuapp.com/api/heroes';
+const teamURL = 'https://stark-wave-31121.herokuapp.com/api/team'
 
 const getAll = () => {
     const request = axios.get(baseURL);

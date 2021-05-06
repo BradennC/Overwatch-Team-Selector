@@ -1,10 +1,12 @@
 import React from 'react';
+import '../styles/heroCard.css';
 
 const Hero = ({ hero, add }) => (
-    <div>
-        <h3>{hero.name}</h3>
-        <p>{hero.role}</p>
-        <button onClick={() => add(hero.id)}>Select</button>
+    <div className="heroCard">
+        <img src={hero.pic} alt="" height="200" width="200" />
+        <p>{hero.name} - {hero.role}</p>
+        
+        <button className="selectHeroBtn" onClick={() => add(hero.id)}>Select</button>
     </div>
 );
 

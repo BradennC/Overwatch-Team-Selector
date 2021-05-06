@@ -3,10 +3,12 @@ import heroeService from './services/heroes';
 
 import Heroes from './components/Heroes';
 import Team from './components/Team';
+import Search from './components/Search';
 
 function App() {
   const [ heroes, setHeroes] = useState([]);
   const [ team, setTeam ] = useState([]);
+  const [ search, setSearch ] = useState('');
 
   const addToTeam = (heroID) => {
     const hero = heroes.find(hero => hero.id === heroID);
@@ -15,6 +17,8 @@ function App() {
       return console.log('hero exists in team');
     } else if (team.filter(teamHero => teamHero.role === hero.role).length >= 2) {
       return console.log('too many of a certain role')
+    } else if (team.length >= 6) {
+      return console.log('team is full')
     }
     else {
       heroeService.addTeamMate(hero)
@@ -48,13 +52,23 @@ function App() {
     })
   }, []);
 
+  const searchHandler = (event) => {
+    return setSearch(event.target.value);
+  };
+
+  const heroesToShow = (!search)
+    ? heroes
+    : heroes.filter(hero => hero.name.includes(search))
+
   console.log(heroes);
 
   return (
     <div>
       <h1>Overwatch Team Selector</h1>
-      <Heroes heroes={heroes} add={addToTeam} />
       <Team team={team} remove={removeHero} />
+      <br></br>
+      <Search searchHandler={searchHandler} />
+      <Heroes heroes={heroesToShow} add={addToTeam} />
     </div>
   );
 }

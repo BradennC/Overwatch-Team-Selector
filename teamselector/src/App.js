@@ -11,10 +11,19 @@ function App() {
   const addToTeam = (heroID) => {
     const hero = heroes.find(hero => hero.id === heroID);
 
-    heroeService.addTeamMate(hero)
+    if (team.some(teamHero => teamHero.id === hero.id)) {
+      return console.log('hero exists in team');
+    } else if (team.filter(teamHero => teamHero.role === hero.role).length >= 2) {
+      return console.log('too many of a certain role')
+    }
+    else {
+      heroeService.addTeamMate(hero)
     .then(response => {
       setTeam(team.concat(hero))
     });
+    }
+
+    
   };
 
   const removeHero = (heroID) => {

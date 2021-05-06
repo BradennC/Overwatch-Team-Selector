@@ -37,7 +37,7 @@ function App() {
     .then(initialTeam => {
       setTeam(initialTeam)
     })
-  }, [])
+  }, []);
 
   console.log(heroes);
 

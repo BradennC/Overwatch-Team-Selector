@@ -163,34 +163,19 @@
   ],
   "team": [
     {
-      "name": "Torbjorn",
-      "role": "dps",
-      "id": 26
-    },
-    {
-      "name": "Symmetra",
-      "role": "dps",
-      "id": 27
-    },
-    {
-      "name": "Bastion",
-      "role": "dps",
-      "id": 30
-    },
-    {
-      "name": "Mei",
-      "role": "dps",
-      "id": 29
-    },
-    {
-      "name": "Reaper",
-      "role": "dps",
-      "id": 31
-    },
-    {
       "name": "Doomfist",
       "role": "dps",
       "id": 32
+    },
+    {
+      "name": "Sombra",
+      "role": "dps",
+      "id": 28
+    },
+    {
+      "name": "Junkrat",
+      "role": "dps",
+      "id": 22
     }
   ]
 }

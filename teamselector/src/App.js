@@ -68,7 +68,7 @@ function App() {
       <Team team={team} remove={removeHero} />
       <br></br>
       <Search searchHandler={searchHandler} />
-      <Heroes heroes={heroesToShow} add={addToTeam} />
+      <Heroes heroes={heroesToShow} team={team} add={addToTeam} />
     </div>
   );
 }

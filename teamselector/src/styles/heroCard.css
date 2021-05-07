@@ -22,6 +22,13 @@
 	text-shadow:0px 1px 0px #2f6627;
 }
 
+.selectHeroBtn:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 .removeBtn {
     width: 120px;
     background-color:#d82323;
